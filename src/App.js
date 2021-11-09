@@ -1,23 +1,42 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable prefer-destructuring */
+
 import React, { useState } from 'react';
-import Calculator from './Components/Presenter/CalculatorPresenter';
-import {
-  Display,
-  CurrentCal,
-  ResultCal,
-} from './Components/Presenter/DisplayPresenter';
-import Control from './Components/Presenter/ControlPresenter';
+import CalculatorPresenter from './Components/Presenter/CalculatorPresenter';
+import DisplayContainer from './Components/Container/DisplayContainer';
+import ControlContainer from './Components/Container/ControlContainer';
 
 function App() {
-  const [numString, setNumber] = useState('jjkk');
+  const [currentCal, setcurrentCal] = useState(['1', '+', '9']);
+  const [resultCal, setresultCal] = useState(10);
+
+  const tmpChange = e => {
+    const value = e.target.value;
+
+    switch (value) {
+      case 'c':
+        setresultCal(value);
+        break;
+
+      case '=':
+        setresultCal(value);
+        break;
+
+      case '+':
+        setresultCal(value);
+        break;
+
+      default:
+        setresultCal(value);
+        break;
+    }
+  };
   return (
     <>
-      <Calculator>
-        <Display>
-          <CurrentCal>{numString}</CurrentCal>
-          <ResultCal></ResultCal>
-        </Display>
-        <Control k={setNumber} />
-      </Calculator>
+      <CalculatorPresenter>
+        <DisplayContainer CurrentCal={currentCal} ResultCal={resultCal} />
+        <ControlContainer calculateFunc={tmpChange} />
+      </CalculatorPresenter>
     </>
   );
 }

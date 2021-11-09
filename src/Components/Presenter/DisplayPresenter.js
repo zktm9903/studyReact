@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Display = styled.div`
+const DisplayPresenter = styled.div`
   width: 100%;
   height: 30%;
   display: flex;
@@ -9,7 +9,7 @@ const Display = styled.div`
   border-radius: 0.75rem 0.75rem 0 0;
 `;
 
-const CurrentCal = styled.div`
+const CurrentCalPresenter = styled.div`
   height: 2rem;
   width: 95%;
   color: white;
@@ -18,7 +18,7 @@ const CurrentCal = styled.div`
   padding-top: 1.5rem;
 `;
 
-const ResultCal = styled.div`
+const ResultCalPresenter = styled.div`
   height: 3rem;
   width: 95%;
   color: white;
@@ -28,4 +28,4 @@ const ResultCal = styled.div`
   padding-top: 1rem;
 `;
 
-export { Display, CurrentCal, ResultCal };
+export { DisplayPresenter, CurrentCalPresenter, ResultCalPresenter };
